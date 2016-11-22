@@ -1,5 +1,8 @@
-package ru.mail.polis.bench;
+package ru.mail.polis.bench.InsertionSort;
 
+/**
+ * Created by kubri on 11/21/2016.
+ */
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -16,13 +19,13 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import ru.mail.polis.sort.BubbleSort;
+import ru.mail.polis.sort.InsertionSort;
 import ru.mail.polis.sort.Helper;
 
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-public class BubbleSortBench {
+public class InsertionSortBenchAvg {
 
     private int[] a;
 
@@ -32,13 +35,13 @@ public class BubbleSortBench {
     }
 
     @Benchmark
-    public void measureBubbleSort(Blackhole bh) {
-        bh.consume(BubbleSort.sort(a));
+    public void measureInsertionSort(Blackhole bh) {
+        bh.consume(InsertionSort.sort(a));
     }
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                .include(BubbleSortBench.class.getSimpleName())
+                .include(InsertionSortBenchAvg.class.getSimpleName())
                 .warmupIterations(5)
                 .measurementIterations(5)
                 .forks(1)

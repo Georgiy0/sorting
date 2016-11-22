@@ -1,4 +1,4 @@
-package ru.mail.polis.sort.valid;
+package ru.mail.polis.sort.valid.sorting;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -17,7 +17,6 @@ import org.junit.runners.Parameterized;
 
 import ru.mail.polis.sort.BubbleSort;
 import ru.mail.polis.sort.Helper;
-
 @RunWith(value = Parameterized.class)
 public class Tester {
 
@@ -48,17 +47,9 @@ public class Tester {
         });
     }
 
-    private boolean isSorted(int[] a) {
-        boolean isSorted = true;
-        for (int i = 0; i < a.length - 1 && isSorted; i++) {
-            isSorted = a[i] <= a[i + 1];
-        }
-        return isSorted;
-    }
-
     @Test
     public void test01_checkBubbleSort() throws IOException {
-        Assert.assertTrue(isSorted(BubbleSort.sort(array)));
+        Assert.assertTrue(Helper.isSorted(BubbleSort.sort(array)));
     }
 
 }

@@ -24,4 +24,12 @@ public class Helper {
         }
         return a;
     }
+
+    public static boolean isSorted(int[] a) {
+        boolean isSorted = true;
+        for (int i = 0; i < a.length - 1 && isSorted; i++) {
+            isSorted = a[i] <= a[i + 1];
+        }
+        return isSorted;
+    }
 }
