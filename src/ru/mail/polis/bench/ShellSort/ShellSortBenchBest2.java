@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-public class ShellSortBenchWorst {
+public class ShellSortBenchBest2 {
 
     private int[] a;
 
@@ -36,7 +36,7 @@ public class ShellSortBenchWorst {
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                .include(ShellSortBenchWorst.class.getSimpleName())
+                .include(ShellSortBenchBest2.class.getSimpleName())
                 .warmupIterations(5)
                 .measurementIterations(5)
                 .forks(1)
